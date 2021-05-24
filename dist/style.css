@@ -1,0 +1,12 @@
+
+
+.notRes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+card{
+    min-height: 300px;
+    max-height: 400px;
+}

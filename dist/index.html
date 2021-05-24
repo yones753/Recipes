@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <title>Recipes</title>
+</head>
+
+<body>
+  <!-- <div id="posts"></div> -->
+
+  <div class="input-group mt-3 mb-5 container ">
+    <input id='ingredient' type="text" class="form-control" placeholder="Select Ingredient..."
+      aria-label="Recipient's username" aria-describedby="basic-addon2">
+    <div class="input-group-append">
+      <button id="getRecipe" class="btn btn-outline-primary" type="button">Search!</button>
+    </div>
+  </div>
+
+
+
+  <div id="recipeContainer" class="container-fluid row row-cols-1 row-cols-md-3 g-4  bg-body rounded"></div>
+  <div class="noRes"></div>
+  <script id="recipe-template" type="text/x-handlebars-template">
+    {{#each recipes}}
+    <div class="aa">
+    <div class="recipe card col bg-primary text-white">
+        <a class="card-title text-white" href="{{href}}">{{title}}</a>
+        <img src="{{thumbnail}}" class="card-img-top" />
+        <ul class="ingredients">
+            <p class="card-text">Ingredients</p>
+        {{#each ingredients}}
+            <li>{{this}}</li>
+        {{/each}}
+        </ul>
+    </div>
+  </div>
+{{/each}}
+</script>
+
+
+
+  <script src="./jquery/dist/jquery.js"></script>
+  <script src="./handlebars/dist/handlebars.js"></script>
+  <script src="logic.js"></script>
+  <script src="render.js"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>
